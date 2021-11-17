@@ -1,0 +1,40 @@
+{
+  "name": "povio-labs-users-assignment",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node -r dotenv/config ./bin/www",
+    "db:drop": "DB_INIT=True node_modules/.bin/sequelize --config configuration/index.js db:drop",
+    "db:create": "DB_INIT=True node_modules/.bin/sequelize --config configuration/index.js db:create",
+    "db:migrate": "DB_INIT=True node_modules/.bin/sequelize --config configuration/index.js db:migrate --migrations-path ./migrations",
+    "db:clean": "npm run db:drop; npm run db:create; npm run db:migrate",
+    "test": "NODE_ENV=test npm run db:clean; NODE_ENV=test node_modules/mocha/bin/mocha --opts ./mocha.opts"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "cookie-parser": "~1.4.3",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.0",
+    "jwt-simple": "^0.5.5",
+    "lgtm": "^1.2.1",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.8.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.43.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2",
+    "node-mocks-http": "^1.7.3",
+    "should": "^13.2.3"
+  }
+}

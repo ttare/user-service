@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "username": "tkaldzija",
+      "password": "tkaldzija1234"
+    },
+    {
+      "username": "tarik90",
+      "password": "ttarik1234"
+    },
+    {
+      "username": "ttare",
+      "password": "ttare1234",
+      "passwordToChange": "ttare1234new"
+    }
+  ]
+}
